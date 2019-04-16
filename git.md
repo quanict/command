@@ -1,17 +1,31 @@
 
 #Config
-
 ###Get
-	
-	git config --get remote.origin.url
-
+```bash
+git config --get remote.origin.url
+```
+###Caching your GitHub password in Git
+```git
+git config --global credential.helper cache
+```
 
 #Remove
-
 ###Remove Directory
-
-	git rm --cached mylogfile.log
-
+```bash
+git rm --cached mylogfile.log
+```
 ###Remove file
+```bash
+git rm --cached -r mydirectory
+```
+###Remove branch
+```bash
+git branch -d branch_name
+git branch -D branch_name
+```
+
+####Delete a remote GIT branch
+```bash
+git push <remote_name> --delete <branch_name>
+```
 	
-	git rm --cached -r mydirectory
