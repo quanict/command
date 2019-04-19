@@ -2,28 +2,35 @@
 
 Tuân theo chuẩn PSR (PHP Standards Recommendation) của nhóm FIG
 
+```Comments
 https://www.php-fig.org/psr/
 https://github.com/php-fig/fig-standards/tree/master/accepted
-
-## PSR-1: Basic Coding Standard
 ```
+
+## PSR-1 Basic Coding Standard
+
+===================================================================================================================
+```link
 https://www.php-fig.org/psr/psr-1/
 ```
+
 ### 1.1 Files
 
 #### 1.1.1 PHP tags
 
-Code phải được viết trong cặp thẻ <?php ?> và nên sử dụng cặp thẻ ngắn <?= ?> thay cho echo. Không sử dụng các thẻ khác
+- Code phải được viết trong cặp thẻ <?php ?> và nên sử dụng cặp thẻ ngắn <?= ?> thay cho echo. Không sử dụng các thẻ khác
 
 #### 1.1.2 Character Encoding
-Code chỉ được sử dụng UTF-8 không có BOM (BOM - Byte Order Mark là các chuỗi EF,BB,BF ở đầu file cho phép phần mềm biết đây là 1 file UTF-8).
+
+- Code chỉ được sử dụng UTF-8 không có BOM (BOM - Byte Order Mark là các chuỗi EF,BB,BF ở đầu file cho phép phần mềm biết đây là 1 file UTF-8).
 
 #### 1.1.3 Side Effects
-– Mỗi một file PHP chỉ nên làm 1 nhiệm vụ duy nhất ( chứa một class, chứa functions, hoặc chứa constants ... ), tránh chồng chéo (gọi là side effect).
+
+- Mỗi một file PHP chỉ nên làm 1 nhiệm vụ duy nhất ( chứa một class, chứa functions, hoặc chứa constants ... ), tránh chồng chéo (gọi là side effect).
 
 ### 1.2 Namespace and Class Names
-- Namespace phải tuân theo chuẩn PSR “autoloading” (PSR-0, PSR-4).
 
+- Namespace phải tuân theo chuẩn PSR “autoloading” (PSR-0, PSR-4).
 - Tên của class phải trùng với tên file chứa class 
 
 ~~~php
@@ -35,11 +42,9 @@ class Foo
 {
 }
 ~~~
- 
-– Tên class phải viết theo quy tắc StudlyCaps.
 
-
-Code viết cho PHP 5.2.x và phiên bản cũ hơn  phải sử dụng quy ước pseudo-namespacing ( sử dụng `Vendor_` trước trên class )
+- Tên class phải viết theo quy tắc StudlyCaps.
+- Code viết cho PHP 5.2.x và phiên bản cũ hơn  phải sử dụng quy ước pseudo-namespacing ( sử dụng `Vendor_` trước trên class )
 
 ~~~php
 <?php
@@ -52,7 +57,7 @@ class Vendor_Model_Foo
 ### 1.3 Class Constants, Properties, and Methods
 
 #### 1.3.1 Hằng Số
-– Các hẳng số phải viết hoa tất cả các chữ, cách nhau bằng dấu gạch chân.
+- Các hẳng số phải viết hoa tất cả các chữ, cách nhau bằng dấu gạch chân.
 
 ~~~php
 <?php
@@ -67,49 +72,59 @@ class Foo
 
 #### 1.3.2 Properties
 
-Tuân thủ theo một quy tắc nhất định, không nên sử dụng nhiều quy ước.
+- Tuân thủ theo một quy tắc nhất định, không nên sử dụng nhiều quy ước.
 
 ~~~
 Quy ước dùng quy tắc camelCase để đặt tên thuộc tính.
 ~~~
 
 #### 1.3.3 Methods
-Tên phương thức viết theo quy tắc camelCase.
+- Tên phương thức viết theo quy tắc camelCase.
 
 ## PSR-2: Coding Style Guide
 
-### 2.1. Basic Coding Standard
+===================================================================================================================
+```link
+https://www.php-fig.org/psr/psr-2/
+```
+
+
+### 2.1 General
+
+#### 2.1.1 Basic Coding Standard
+
 - Code phải tuân thủ tất cả chuẩn [PSR-1] & [PSR-0].
 
-### 2.2. Files
+#### 2.1.2 Files
+
 - Các file phải sử dụng Unix LF (linefeed) để kết thúc dòng.
 - Các file PHP phải kết thúc bằng một dòng trắng.
 - Thẻ đóng `?>` không sử dụng ở file chỉ chứ code PHP
 
-### 2.3. Lines
+#### 2.1.3 Lines
+
 - Trên 1 dòng không vượt quá 120 kí tự, tốt nhất nên nhỏ hơn hoặc bằng 80 kí tự.
 - Không nên có kí tự trắng ở cuối dòng code.
 - Có thể sử dụng dòng trắng để chia tách các khối để cho view code dễ dàng hơn.
 - Không được sử dụng nhiều khai báo, toán tử trên cùng một dòng
 
-### 2.4. Cách đầu dòng
+#### 2.1.4 Cách đầu dòng
+
 - Sử dụng 4 khoảng trắng(spaces) để thụt dòng, tuyệt đối không dùng tab (bạn có thể khai báo trong công cụ lập trình để khi ấn tab nó tương đương với việc thụt vào 4 spaces).
 
-### 2.5. Keywords and True/False/Null
+#### 2.1.5 Keywords and True/False/Null
 
 - Những PHP [keywords] phải viết chữ thường.
 - Những hằng số PHP `true`, `false`, và `null` phải viết thường.
 
 [keywords]: http://php.net/manual/en/reserved.keywords.php
 
-## 3. Namespace and Use Declarations
+### 2.2 Namespace and Use Declarations
 
 - Phải có 1 dòng trắng sau khi khai báo namespace và phải có 1 dòng trắng sau các khai báo use.
 - Tất cả những khai báo `use` phải viết sau khai báo `namespace`
 - Phải sử dụng từ khóa `use` cho mỗi khai báo
 - Phải sủ dụng một dòng trắng sau mỗi khối khai báo `use`
-
-For example:
 
 ~~~php
 <?php
@@ -123,14 +138,11 @@ use OtherVendor\OtherPackage\BazClass;
 
 ~~~
 
-## 4. Classes, Properties, and Methods
+### 2.3. Classes, Properties, and Methods
 
-The term "class" refers to all classes, interfaces, and traits.
-
-### 4.1. Extends and Implements
+#### 2.3.1 Extends and Implements
 
 - Từ khóa `extends` và `implements` phải được sử dụng trên cùng một dòng với [tên class].
-
 - Khai báo thẻ mở và thẻ đóng một class phải ở một dòng riêng biệt.
 
 ~~~php
@@ -147,7 +159,7 @@ class ClassName extends ParentClass implements \ArrayAccess, \Countable
 }
 ~~~
 
-Danh sách các `implements` phải được tách ra thành nhiều dòng, mỗi một dòng chứa một khai báo riêng biệt.
+- Danh sách các `implements` phải được tách ra thành nhiều dòng, mỗi một dòng chứa một khai báo riêng biệt.
 
 ~~~php
 <?php
@@ -166,18 +178,11 @@ class ClassName extends ParentClass implements
 }
 ~~~
 
-### 4.2. Properties
+#### 2.3.2 Properties
 
-Visibility MUST be declared on all properties.
-
-The `var` keyword MUST NOT be used to declare a property.
-
-There MUST NOT be more than one property declared per statement.
-
-Property names SHOULD NOT be prefixed with a single underscore to indicate
-protected or private visibility.
-
-A property declaration looks like the following.
+- Không sử dụng từ khóa `var` khi khai báo [property]
+- Không được khai báo nhiều hơn một [property] cho mỗi khai báo.
+- Tên của [property] không nên dùng gạch dưới để khai báo đặc tính [protected] hay [private]
 
 ~~~php
 <?php
@@ -189,20 +194,10 @@ class ClassName
 }
 ~~~
 
-### 4.3. Methods
+#### 2.3.3 Methods
 
-Visibility MUST be declared on all methods.
-
-Method names SHOULD NOT be prefixed with a single underscore to indicate
-protected or private visibility.
-
-Method names MUST NOT be declared with a space after the method name. The
-opening brace MUST go on its own line, and the closing brace MUST go on the
-next line following the body. There MUST NOT be a space after the opening
-parenthesis, and there MUST NOT be a space before the closing parenthesis.
-
-A method declaration looks like the following. Note the placement of
-parentheses, commas, spaces, and braces:
+- Tên của [Method] không nên dùng gạch dưới để khai báo đặc tính [protected] hay [private]
+- Tên của [Method] không được có ký tự [space] phía sau khai báo. Ký tự mở [{] và đóng [}] phải được viết ở một dòng riêng biệt, và không được có ký tự [space] sau.
 
 ~~~php
 <?php
@@ -217,13 +212,10 @@ class ClassName
 }
 ~~~
 
-### 4.4. Method Arguments
+#### 2.3.4 Method Arguments
 
-In the argument list, there MUST NOT be a space before each comma, and there
-MUST be one space after each comma.
-
-Method arguments with default values MUST go at the end of the argument
-list.
+- Khi dùng nhiều biến cho [method], không được dùng [space] trước mỗi dấu phẩy, và phải có một [space] sau môi dấu phẩy
+- Biến cho [method] có giá trị mặc định thì phải khai báo sau cùng khi khai báo [method]
 
 ~~~php
 <?php
@@ -238,13 +230,8 @@ class ClassName
 }
 ~~~
 
-Argument lists MAY be split across multiple lines, where each subsequent line
-is indented once. When doing so, the first item in the list MUST be on the
-next line, and there MUST be only one argument per line.
-
-When the argument list is split across multiple lines, the closing parenthesis
-and opening brace MUST be placed together on their own line with one space
-between them.
+- Biến cho [method] có thể khai báo thành nhiều dòng, mỗi dòng chỉ được khai báo một biến.
+- Khi khai báo biến cho [method] trên nhiều dòng, thì ký tự đóng argument [(] và mở method [{] phải được phân tách bằng một [space]
 
 ~~~php
 <?php
@@ -262,13 +249,10 @@ class ClassName
 }
 ~~~
 
-### 4.5. `abstract`, `final`, and `static`
+#### 2.3.5 `abstract`, `final`, and `static`
 
-When present, the `abstract` and `final` declarations MUST precede the
-visibility declaration.
-
-When present, the `static` declaration MUST come after the visibility
-declaration.
+- Khi khai báo các đặc tính `abstract` và `final`  thì phải dùng trước các khai báo `public` và `protected`
+- Khi khai báo `static` thì phải khai báo sau các khai báo `public` và `protected`
 
 ~~~php
 <?php
@@ -287,13 +271,10 @@ abstract class ClassName
 }
 ~~~
 
-### 4.6. Method and Function Calls
+#### 2.3.6. Method and Function Calls
 
-When making a method or function call, there MUST NOT be a space between the
-method or function name and the opening parenthesis, there MUST NOT be a space
-after the opening parenthesis, and there MUST NOT be a space before the
-closing parenthesis. In the argument list, there MUST NOT be a space before
-each comma, and there MUST be one space after each comma.
+- Khi khởi tạo một [method] hay gọi [function], không được có ký tự [space] ở giữa [method] hoặc tên [function] và ký tự mở [(], không được có [space] phía trước ký tự đóng [)]
+- Trong danh sách các biến không được có [space] trước dấu phẩy, và phải có [space] phía sau dấy phẩy
 
 ~~~php
 <?php
@@ -302,9 +283,7 @@ $foo->bar($arg1);
 Foo::bar($arg2, $arg3);
 ~~~
 
-Argument lists MAY be split across multiple lines, where each subsequent line
-is indented once. When doing so, the first item in the list MUST be on the
-next line, and there MUST be only one argument per line.
+- Các biến có thể  phân tách thành nhiều dòng, trường hợp này, mỗi biến phải được trình bày ở một dòng riêng biệt.
 
 ~~~php
 <?php
@@ -315,27 +294,23 @@ $foo->bar(
 );
 ~~~
 
-## 5. Control Structures
+### 2.4 Control Structures
 
-The general style rules for control structures are as follows:
-
+- Phải có [space] sau mỗi toán tử chuyển hướng
 - There MUST be one space after the control structure keyword
+- Không được có [space] sau thẻ mở toán tử  chuyển hướng
 - There MUST NOT be a space after the opening parenthesis
-- There MUST NOT be a space before the closing parenthesis
-- There MUST be one space between the closing parenthesis and the opening
-  brace
-- The structure body MUST be indented once
-- The closing brace MUST be on the next line after the body
+- Không được có [space] phía trước thẻ đóng toán tử  chuyển hướng
+- Phải có một [space] giữa thẻ đóng [)] và thẻ mở [{]
+- There MUST be one space between the closing parenthesis and the opening brace
+- Nội dung của [structure] phải được cách lề  hơn so với tên
+- Ký tự đóng phải được viết ở dòng tiếp theo so với nội dung, nằm ở dòng mới riêng biệt.
+- Nội dung của [structure] phải được bao đóng bởi ký tự ngoặc [{] và [}], điều này giúp cho chuẩn hóa cách tổ  chức code cho [structure] và hạn chế lỗi khi thêm code vào [structure]
 
-The body of each structure MUST be enclosed by braces. This standardizes how
-the structures look, and reduces the likelihood of introducing errors as new
-lines get added to the body.
+#### 2.4.1. `if`, `elseif`, `else`
 
-### 5.1. `if`, `elseif`, `else`
-
-An `if` structure looks like the following. Note the placement of parentheses,
-spaces, and braces; and that `else` and `elseif` are on the same line as the
-closing brace from the earlier body.
+- Chú ý toán tử  `else` và `elseif` phải được viết cùng một dòng với ký tự đóng điều kiện trước.
+- Chú ý các ký tự dấu ngoặc đơn, dấu cách và dấu ngoặc nhọn ở ví dụ sau
 
 ~~~php
 <?php
@@ -348,16 +323,12 @@ if ($expr1) {
 }
 ~~~
 
-The keyword `elseif` SHOULD be used instead of `else if` so that all control
-keywords look like single words.
+- Không nên dùng toán tử  `else if` , nên thay bằng toán tử  `elseif`.
 
-### 5.2. `switch`, `case`
+#### 2.4.2. `switch`, `case`
 
-A `switch` structure looks like the following. Note the placement of
-parentheses, spaces, and braces. The `case` statement MUST be indented once
-from `switch`, and the `break` keyword (or other terminating keyword) MUST be
-indented at the same level as the `case` body. There MUST be a comment such as
-`// no break` when fall-through is intentional in a non-empty `case` body.
+- Toán tử  `case` phải được sử dụng trong `switch`, và toán tử  `break` phải được đặt ở level trên cùng trong nội dụng của `case`. Bắt buộc phải  comment ở `case` không bình thường, ví dụ `// no break` ở ví dụ sau.
+- Chú ý các ký tự dấu ngoặc đơn, dấu cách và dấu ngoặc nhọn ở ví dụ sau:
 
 ~~~php
 <?php
@@ -379,10 +350,9 @@ switch ($expr) {
 }
 ~~~
 
-### 5.3. `while`, `do while`
+#### 2.4.3. `while`, `do while`
 
-A `while` statement looks like the following. Note the placement of
-parentheses, spaces, and braces.
+- Chú ý các ký tự dấu ngoặc đơn, dấu cách và dấu ngoặc nhọn ở ví dụ sau
 
 ~~~php
 <?php
@@ -391,8 +361,7 @@ while ($expr) {
 }
 ~~~
 
-Similarly, a `do while` statement looks like the following. Note the placement
-of parentheses, spaces, and braces.
+- Chú ý các ký tự dấu ngoặc đơn, dấu cách và dấu ngoặc nhọn ở ví dụ sau
 
 ~~~php
 <?php
@@ -401,10 +370,9 @@ do {
 } while ($expr);
 ~~~
 
-### 5.4. `for`
+#### 2.4.4. `for`
 
-A `for` statement looks like the following. Note the placement of parentheses,
-spaces, and braces.
+- Chú ý các ký tự dấu ngoặc đơn, dấu cách và dấu ngoặc nhọn ở ví dụ sau
 
 ~~~php
 <?php
@@ -413,10 +381,9 @@ for ($i = 0; $i < 10; $i++) {
 }
 ~~~
 
-### 5.5. `foreach`
+#### 2.4.5. `foreach`
 
-A `foreach` statement looks like the following. Note the placement of
-parentheses, spaces, and braces.
+- Chú ý các ký tự dấu ngoặc đơn, dấu cách và dấu ngoặc nhọn ở ví dụ sau
 
 ~~~php
 <?php
@@ -425,10 +392,9 @@ foreach ($iterable as $key => $value) {
 }
 ~~~
 
-### 5.6. `try`, `catch`
+#### 2.4.6. `try`, `catch`
 
-A `try catch` block looks like the following. Note the placement of
-parentheses, spaces, and braces.
+- Chú ý các ký tự dấu ngoặc đơn, dấu cách và dấu ngoặc nhọn ở ví dụ sau
 
 ~~~php
 <?php
@@ -441,26 +407,15 @@ try {
 }
 ~~~
 
-## 6. Closures
+### 2.5 Closures
 
-Closures MUST be declared with a space after the `function` keyword, and a
-space before and after the `use` keyword.
-
-The opening brace MUST go on the same line, and the closing brace MUST go on
-the next line following the body.
-
-There MUST NOT be a space after the opening parenthesis of the argument list
-or variable list, and there MUST NOT be a space before the closing parenthesis
-of the argument list or variable list.
-
-In the argument list and variable list, there MUST NOT be a space before each
-comma, and there MUST be one space after each comma.
-
-Closure arguments with default values MUST go at the end of the argument
-list.
-
-A closure declaration looks like the following. Note the placement of
-parentheses, commas, spaces, and braces:
+- Phải có một [space] sau từ khóa `function`, và một [space] phía trước và phía sau từ khóa `use`
+- Ký tự mở [{] phải được viết trên cùng dòng, và ký tự đóng phải được viết ở dòng mới.
+- Không được có [space] phía sau [)] cùng khai báo tham số , hoặc biến số, và không được có [space] phía trước ký tự mở [(] danh sách tham số, biến số 
+- Không được có [space] sau ký tự bắt đầu tham số hoặc biến số [(], và không được có [space] phía trước ký tự đóng tham số hoặc biến số
+- Trong danh sách các tham số và biến, không được có [space] sau mỗi dấu phẩy, và phải có một [space] sau mỗi dấu phẩy
+- Tham số có giá trị mặc định phải được khai báo ở sau cùng danh sách
+- Chú ý các ký tự dấu ngoặc đơn, dấu cách, dấu phẩy và dấu ngoặc nhọn ở ví dụ sau
 
 ~~~php
 <?php
@@ -473,17 +428,8 @@ $closureWithArgsAndVars = function ($arg1, $arg2) use ($var1, $var2) {
 };
 ~~~
 
-Argument lists and variable lists MAY be split across multiple lines, where
-each subsequent line is indented once. When doing so, the first item in the
-list MUST be on the next line, and there MUST be only one argument or variable
-per line.
-
-When the ending list (whether of arguments or variables) is split across
-multiple lines, the closing parenthesis and opening brace MUST be placed
-together on their own line with one space between them.
-
-The following are examples of closures with and without argument lists and
-variable lists split across multiple lines.
+- Khi dùng nhiều tham số và biến có thể khai báo ở nhiều dòng, trường hợp này mỗi dòng chỉ có thể chứa một giá trị.
+- Khi dùng nhiều tham số hoặc biến số, thì ký tự đóng [)] và ký tự mở hàm [{] phải cùng một dòng, và có một [space] phân tách.
 
 ~~~php
 <?php
@@ -532,8 +478,7 @@ $shortArgs_longVars = function ($arg) use (
 };
 ~~~
 
-Note that the formatting rules also apply when the closure is used directly
-in a function or method call as an argument.
+- Lưu ý, các quy tắc về format cũng cần được áp dụng khi sử dung [closure] trong [function] dưới dạng tham số
 
 ~~~php
 <?php
@@ -546,26 +491,341 @@ $foo->bar(
 );
 ~~~
 
-## 7. Conclusion
+### 2.6 Ví dụ Coding Style
 
-There are many elements of style and practice intentionally omitted by this
-guide. These include but are not limited to:
+~~~php
+<?php
+namespace Vendor\Package;
 
-- Declaration of global variables and global constants
+use FooInterface;
+use BarClass as Bar;
+use OtherVendor\OtherPackage\BazClass;
 
-- Declaration of functions
+class Foo extends Bar implements FooInterface
+{
+    public function sampleMethod($a, $b = null)
+    {
+        if ($a === $b) {
+            bar();
+        } elseif ($a > $b) {
+            $foo->bar($arg1);
+        } else {
+            BazClass::bar($arg2, $arg3);
+        }
+    }
 
-- Operators and assignment
+    final public static function bar()
+    {
+        // method body
+    }
+}
+~~~
 
-- Inter-line alignment
+## 3. Logger Interface
 
-- Comments and documentation blocks
+===================================================================================================================
 
-- Class name prefixes and suffixes
+```link
+https://www.php-fig.org/psr/psr-3/
+```
 
-- Best practices
+### 3.1. Specification
 
-Future recommendations MAY revise and extend this guide to address those or
-other elements of style and practice.
+#### 3.1.1 Basics
 
+- `LoggerInterface` đề xuất 8 [method] tạo logs tương ứng với các `mức độ log` [RFC 5424][] (debug, info, notice, warning, error, critical, alert, emergency).
+- Phương thức thứ 9, `log`, cho phép `mức độ log` vơi tham số . Khi gọi phương thức này với hằng số  `mức độ log` thì kết quả trả về phải có kế quả trả về phải cùng `mức độ log`. Việc gọi phương thức log với một mức độ không được định nghĩa thì phải trả về  `Psr\Log\InvalidArgumentException`, nếu như không biết mức độ của lỗi. Không nên chỉnh sửa tùy biến mức độ `log`  nếu như không cần thiết cho dự án.
 
+[RFC 5424]: http://tools.ietf.org/html/rfc5424
+
+#### 3.1.2 Message
+
+- Mọi [method] cho phép trả [mesage] thành chuỗi, hoặc một [object] với một [method] trả về  chuỗi `__toString()`. Khi sử dụng có thể  nhận message là một object, nhưng cũng phải hỗ trợ để trả về dạng chuỗi.
+
+- [message] có thể  chứa [placeholders], cho phép người dùng thay thế giá trị dạng [array] trong khi sử dụng
+- Tên của [placeholders] phải tương ứng với các khóa nội dung [array] trong ngữ cảnh sử dụng
+- [Placeholders] phải bắt đầu bằng ký tự `{`, và kết thúc bằng ký tự `}`, không được có khoảng trắng [space] giữa tên [placeholders] và ký tự này.
+- Quy tắc đặt tên [Placeholder], nên chỉ bao gồm các ký tự `A-Z`, `a-z`, `0-9`, gạch chân `_`, và dấu chám `.`.
+
+ Ví dụ tham khảo :
+  ~~~php
+  <?php
+
+  /**
+   * Interpolates context values into the message placeholders.
+   */
+  function interpolate($message, array $context = array())
+  {
+      // build a replacement array with braces around the context keys
+      $replace = array();
+      foreach ($context as $key => $val) {
+          // check that the value can be casted to string
+          if (!is_array($val) && (!is_object($val) || method_exists($val, '__toString'))) {
+              $replace['{' . $key . '}'] = $val;
+          }
+      }
+
+      // interpolate replacement values into the message and return
+      return strtr($message, $replace);
+  }
+
+  // a message with brace-delimited placeholder names
+  $message = "User {username} created";
+
+  // a context array of placeholder names => replacement values
+  $context = array('username' => 'bolivar');
+
+  // echoes "User bolivar created"
+  echo interpolate($message, $context);
+  ~~~
+
+#### 3.1.3 Context
+
+- Mọi phương thức chấp nhận dữ liệu trong ngữ cảnh là một mảng. Phải đảm bảo dữ liệu truyền vào phải có tính mở. Một dữ liệu truyền vào không được trả về lỗi [error]. hoặc cảnh báo [warning], hay [notice] của PHP.
+- Nếu một đối tượng `Exception` gửi vào ngữ cảnh, nó phải chứa khóa `'exception'`. Nó phải cho phép truy xuất lỗi. Vẫn phải xác minh khóa `'exception'` trong một `Exception` trước khi sử dụng.
+
+#### 3.1.4 Tham khảo Helper classes và interfaces
+
+- Có thể sử dụng Class `Psr\Log\AbstractLogger` cho `LoggerInterface`, nó đã được tạo để thỏa mãn quy ước phía trên.
+- Tương tự, có thể sử dụng `Psr\Log\LoggerTrait` cho phương thức `log`. Tuy nhiên nó không hỗ trợ `interfaces`, nếu sử dụng bạn vẫn phải kế thừa `LoggerInterface`
+- `Psr\Log\NullLogger` cung cấp cả với `interface`.  Nó có thể cung cấp 
+- `Psr\Log\LoggerAwareInterface` có chứa phương thức `setLogger(LoggerInterface $logger)`.
+- `Psr\Log\LoggerAwareTrait`  có thể sử dụng trong class dạng `$this->logger`.
+- `Psr\Log\LogLevel` chứa các `log levels`.
+
+### 3.2. Package tham khảo
+
+[psr/log](https://packagist.org/packages/psr/log) package.
+
+### 3.3. `Psr\Log\LoggerInterface`
+
+~~~php
+<?php
+
+namespace Psr\Log;
+
+/**
+ * Describes a logger instance.
+ *
+ * The message MUST be a string or object implementing __toString().
+ *
+ * The message MAY contain placeholders in the form: {foo} where foo
+ * will be replaced by the context data in key "foo".
+ *
+ * The context array can contain arbitrary data, the only assumption that
+ * can be made by implementors is that if an Exception instance is given
+ * to produce a stack trace, it MUST be in a key named "exception".
+ *
+ * See https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md
+ * for the full interface specification.
+ */
+interface LoggerInterface
+{
+    /**
+     * System is unusable.
+     *
+     * @param string $message
+     * @param array $context
+     * @return void
+     */
+    public function emergency($message, array $context = array());
+
+    /**
+     * Action must be taken immediately.
+     *
+     * Example: Entire website down, database unavailable, etc. This should
+     * trigger the SMS alerts and wake you up.
+     *
+     * @param string $message
+     * @param array $context
+     * @return void
+     */
+    public function alert($message, array $context = array());
+
+    /**
+     * Critical conditions.
+     *
+     * Example: Application component unavailable, unexpected exception.
+     *
+     * @param string $message
+     * @param array $context
+     * @return void
+     */
+    public function critical($message, array $context = array());
+
+    /**
+     * Runtime errors that do not require immediate action but should typically
+     * be logged and monitored.
+     *
+     * @param string $message
+     * @param array $context
+     * @return void
+     */
+    public function error($message, array $context = array());
+
+    /**
+     * Exceptional occurrences that are not errors.
+     *
+     * Example: Use of deprecated APIs, poor use of an API, undesirable things
+     * that are not necessarily wrong.
+     *
+     * @param string $message
+     * @param array $context
+     * @return void
+     */
+    public function warning($message, array $context = array());
+
+    /**
+     * Normal but significant events.
+     *
+     * @param string $message
+     * @param array $context
+     * @return void
+     */
+    public function notice($message, array $context = array());
+
+    /**
+     * Interesting events.
+     *
+     * Example: User logs in, SQL logs.
+     *
+     * @param string $message
+     * @param array $context
+     * @return void
+     */
+    public function info($message, array $context = array());
+
+    /**
+     * Detailed debug information.
+     *
+     * @param string $message
+     * @param array $context
+     * @return void
+     */
+    public function debug($message, array $context = array());
+
+    /**
+     * Logs with an arbitrary level.
+     *
+     * @param mixed $level
+     * @param string $message
+     * @param array $context
+     * @return void
+     */
+    public function log($level, $message, array $context = array());
+}
+~~~
+
+### 3.4. `Psr\Log\LoggerAwareInterface`
+
+~~~php
+<?php
+
+namespace Psr\Log;
+
+/**
+ * Describes a logger-aware instance.
+ */
+interface LoggerAwareInterface
+{
+    /**
+     * Sets a logger instance on the object.
+     *
+     * @param LoggerInterface $logger
+     * @return void
+     */
+    public function setLogger(LoggerInterface $logger);
+}
+~~~
+
+### 3.5. `Psr\Log\LogLevel`
+
+~~~php
+<?php
+
+namespace Psr\Log;
+
+/**
+ * Describes log levels.
+ */
+class LogLevel
+{
+    const EMERGENCY = 'emergency';
+    const ALERT     = 'alert';
+    const CRITICAL  = 'critical';
+    const ERROR     = 'error';
+    const WARNING   = 'warning';
+    const NOTICE    = 'notice';
+    const INFO      = 'info';
+    const DEBUG     = 'debug';
+}
+
+## 4. Autoloader
+
+===================================================================================================================
+
+```link
+https://www.php-fig.org/psr/psr-4/
+```
+~~~
+
+## 1. Overview
+
+This PSR describes a specification for [autoloading][] classes from file paths. It is fully interoperable, and can be used in addition to any other autoloading specification, including [PSR-0][]. This PSR also describes  where to place files that will be autoloaded according to the specification.
+
+## 2. Specification
+
+1. The term "class" refers to classes, interfaces, traits, and other similar structures.
+
+2. Khai báo đầy đủ một `class` có dạng sau 
+
+~~~php
+\<NamespaceName>(\<SubNamespaceNames>)*\<ClassName>
+~~~
+
+    1. The fully qualified class name MUST have a top-level namespace name, also known as a "vendor namespace".
+    1. Khai báo phải có [namespace] của mức cá nhất, có thể hiểu là [vendor namespace]
+
+    2. The fully qualified class name MAY have one or more sub-namespace names.
+    2. Khai báo đầy thể có thể có một hoặc nhiều [namespace] con
+
+    3. The fully qualified class name MUST have a terminating class name.
+
+    4. Underscores have no special meaning in any portion of the fully qualified class name.
+
+    5. Alphabetic characters in the fully qualified class name MAY be any combination of lower case and upper case.
+
+    6. All class names MUST be referenced in a case-sensitive fashion.
+
+3. When loading a file that corresponds to a fully qualified class name ...
+3. Khi lấy file 
+
+    1. A contiguous series of one or more leading namespace and sub-namespace names, not including the leading namespace separator, in the fully qualified class name (a "namespace prefix") corresponds to at least one
+       "base directory".
+    1. Một chuỗi liên tục bao gồm [namespace], và [sub-namespace], không được có dấu phân tách [namespace], 
+
+    2. The contiguous sub-namespace names after the "namespace prefix" correspond to a subdirectory within a "base directory", in which the namespace separators represent directory separators. The subdirectory name MUST match the case of the sub-namespace names.
+
+    3. The terminating class name corresponds to a file name ending in `.php`. The file name MUST match the case of the terminating class name.
+
+4. Sử dụng [Autoloader] không được trả về lỗi, không được đưa ra bất kỳ lỗi nào, không trả về giá trị
+
+## 3. Examples
+
+The table below shows the corresponding file path for a given fully qualified
+class name, namespace prefix, and base directory.
+
+| Fully Qualified Class Name    | Namespace Prefix   | Base Directory           | Resulting File Path
+| ----------------------------- |--------------------|--------------------------|-------------------------------------------
+| \Acme\Log\Writer\File_Writer  | Acme\Log\Writer    | ./acme-log-writer/lib/   | ./acme-log-writer/lib/File_Writer.php
+| \Aura\Web\Response\Status     | Aura\Web           | /path/to/aura-web/src/   | /path/to/aura-web/src/Response/Status.php
+| \Symfony\Core\Request         | Symfony\Core       | ./vendor/Symfony/Core/   | ./vendor/Symfony/Core/Request.php
+| \Zend\Acl                     | Zend               | /usr/includes/Zend/      | /usr/includes/Zend/Acl.php
+
+For example implementations of autoloaders conforming to the specification,
+please see the [examples file][]. Example implementations MUST NOT be regarded
+as part of the specification and MAY change at any time.
+
+[autoloading]: http://php.net/autoload
+[PSR-0]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md
+[examples file]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader-examples.md
