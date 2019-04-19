@@ -760,7 +760,7 @@ class LogLevel
     const DEBUG     = 'debug';
 }
 
-## 4. Autoloader
+## 4. PSR-4 Autoloader
 
 ===================================================================================================================
 
@@ -774,6 +774,14 @@ https://www.php-fig.org/psr/psr-4/
 This PSR describes a specification for [autoloading][] classes from file paths. It is fully interoperable, and can be used in addition to any other autoloading specification, including [PSR-0][]. This PSR also describes  where to place files that will be autoloaded according to the specification.
 
 ## 2. Specification
+
+
+Tên đầy đủ nó PHẢI có một 'tên lớp kết thúc' (terminating class name)
+
+Tên xác định đầy đủ PHẢI có một namespace gốc.
+
+Tên xác định đầy đủ CÓ THỂ có một hoặc nhiều namespace con.
+
 
 1. The term "class" refers to classes, interfaces, traits, and other similar structures.
 
@@ -829,3 +837,22 @@ as part of the specification and MAY change at any time.
 [autoloading]: http://php.net/autoload
 [PSR-0]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md
 [examples file]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader-examples.md
+
+
+
+## 4. PSR-0 Autoloader
+
+===================================================================================================================
+```
+https://viblo.asia/p/coding-convention-doi-voi-mot-project-php-ORNZqNPrl0n
+https://viblo.asia/p/coding-convention-psr-va-coding-standard-in-framgia-djeZ1amQZWz
+```
+
+Chuẩn PSR-0 là một chuẩn cho autoloading classes. Tuy nhiên từ tháng 10/2014 PSR-0 đã được đề suất không sử dụng nữa và PSR-4 được đề xuất thay thế. Tuy nhiên, chúng ta cũng nên tìm hiểu xem PSR-0 có gì đặc biệt, biết đâu vẫn có lúc sử dụng thì sao.
+
+Một namespace và class chuẩn phải tuân theo cấu trúc: <Vendor Name>(<Namespace>)<Class Name>
+Mỗi namespace có namespace gốc <Vendor Name>
+Một namespace có thể chứa bao nhiêu namespace con (sub-namespace) cũng được.
+Mỗi kí tự _ trong tên class sẽ được chuyển đổi thành DIRECTORY_SEPARATOR . Kí tự _ không có ý nghĩa đặc biệt gì trong namespace.
+Khi được tải từ file hệ thống, namespace và class sẽ có chứa hậu tố .php.
+Đối với vendor names, namespace và class names, có thể kết hợp giữa chữ hoa và chữ thường.
