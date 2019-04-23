@@ -2,15 +2,16 @@
 
 Tuân theo chuẩn PSR (PHP Standards Recommendation) của nhóm FIG
 
-```Comments
+```links
 https://www.php-fig.org/psr/
 https://github.com/php-fig/fig-standards/tree/master/accepted
 ```
 
-## PSR-1 Basic Coding Standard
+## 1. PSR-1 Basic Coding Standard
 
 ===================================================================================================================
-```link
+
+```links
 https://www.php-fig.org/psr/psr-1/
 ```
 
@@ -18,20 +19,22 @@ https://www.php-fig.org/psr/psr-1/
 
 #### 1.1.1 PHP tags
 
-- Code phải được viết trong cặp thẻ <?php ?> và nên sử dụng cặp thẻ ngắn <?= ?> thay cho echo. Không sử dụng các thẻ khác
+- Code PHẢI được viết trong cặp thẻ `<?php ?>` và nên sử dụng cặp thẻ ngắn `<?= ?>` thay cho echo. Không sử dụng các thẻ khác
 
 #### 1.1.2 Character Encoding
 
-- Code chỉ được sử dụng UTF-8 không có BOM (BOM - Byte Order Mark là các chuỗi EF,BB,BF ở đầu file cho phép phần mềm biết đây là 1 file UTF-8).
+- Code CHỈ ĐƯỢC sử dụng UTF-8 KHÔNG ĐƯỢC DÙNG [BOM].
+
+[BOM] : BOM - Byte Order Mark là các chuỗi EF,BB,BF ở đầu file cho phép phần mềm biết đây là 1 file UTF-8
 
 #### 1.1.3 Side Effects
 
-- Mỗi một file PHP chỉ nên làm 1 nhiệm vụ duy nhất ( chứa một class, chứa functions, hoặc chứa constants ... ), tránh chồng chéo (gọi là side effect).
+- Mỗi một file `PHP` CHỈ ĐƯỢC nên làm 1 nhiệm vụ duy nhất ( chứa một class, chứa functions, hoặc chứa constants ... ), tránh chồng chéo (gọi là side effect).
 
 ### 1.2 Namespace and Class Names
 
-- Namespace phải tuân theo chuẩn PSR “autoloading” (PSR-0, PSR-4).
-- Tên của class phải trùng với tên file chứa class 
+- [Namespace] PHẢI tuân theo chuẩn PSR “autoloading” (PSR-0, PSR-4).
+- Tên của class PHẢI trùng với tên file chứa class
 
 ~~~php
 <?php
@@ -43,8 +46,8 @@ class Foo
 }
 ~~~
 
-- Tên class phải viết theo quy tắc StudlyCaps.
-- Code viết cho PHP 5.2.x và phiên bản cũ hơn  phải sử dụng quy ước pseudo-namespacing ( sử dụng `Vendor_` trước trên class )
+- Tên class PHẢI viết theo quy tắc [StudlyCaps].
+- Code viết cho PHP 5.2.x và phiên bản cũ hơn  PHẢI sử dụng quy ước [pseudo-namespacing] ( sử dụng `Vendor_` trước trên class )
 
 ~~~php
 <?php
@@ -57,7 +60,8 @@ class Vendor_Model_Foo
 ### 1.3 Class Constants, Properties, and Methods
 
 #### 1.3.1 Hằng Số
-- Các hẳng số phải viết hoa tất cả các chữ, cách nhau bằng dấu gạch chân.
+
+- Các hẳng số PHẢI viết hoa, cách nhau bằng dấu gạch chân.
 
 ~~~php
 <?php
@@ -72,59 +76,70 @@ class Foo
 
 #### 1.3.2 Properties
 
-- Tuân thủ theo một quy tắc nhất định, không nên sử dụng nhiều quy ước.
+- Tuân NÊN thủ theo một quy tắc nhất định, KHÔNG NÊN sử dụng nhiều quy ước.
 
-~~~
-Quy ước dùng quy tắc camelCase để đặt tên thuộc tính.
+~~~note
+Quy ước dùng quy tắc [camelCase] để đặt tên thuộc tính.
 ~~~
 
 #### 1.3.3 Methods
-- Tên phương thức viết theo quy tắc camelCase.
 
-## PSR-2: Coding Style Guide
+- Tên phương thức PHẢI viết theo quy tắc [camelCase].
+
+## 2. PSR-2: Coding Style Guide
 
 ===================================================================================================================
+
 ```link
 https://www.php-fig.org/psr/psr-2/
 ```
 
-
 ### 2.1 General
+
+- Code PHẢI tuân theo PSR [PSR-1].
+- Code PHẢI sử dụng 4 [space] để thụt lề, không dùng `tab`.
+- KHÔNG CÓ giới hạn bắt buộc chiều dài cố định một dòng, giới hạn tối đa KHÔNG ĐƯỢC quá 120 ký tự, TỐT NHẤT nên nhỏ hơn hoặc bằng 80 kí tự.
+- PHẢI CÓ một dòng trắng sau khai báo [namespace], và PHẢI có một dòng trắng sau mỗi khối khai báo.
+- Ký tự mở `class`, `method` PHẢI ở một dòng riêng biệt, và ký tự đóng PHẢI ở một dòng riêng biệt.
+- Tất cả các `method` PHẢI được khai báo đặc điểm  `Visibility`, các thuộc tính `abstract` và `final` PHẢI được khai báo trước `Visibility`. Thuộc tính `static` PHẢI được khai báo sau `Visibility`.
+- Từ khóa của một cấu trúc PHẢI có một [space] phía sau. Nhưng phương thức và gọi [function] thì KHÔNG CÓ.
+- Ký tự mở một cấu trúc '{' PHẢI được viết cùng dòng, và ký tự đóng '}' PHẢI được viết ở một dòng riêng.
+- Ký tự bắt đầu khai báo tham số cho một cấu trúc KHÔNG ĐƯỢC có ký tự [space] phía sau, và ký tự đóng KHÔNG ĐƯỢC có [space] phía trước.
 
 #### 2.1.1 Basic Coding Standard
 
-- Code phải tuân thủ tất cả chuẩn [PSR-1] & [PSR-0].
+- Code PHẢI tuân thủ tất cả chuẩn [PSR-1].
 
 #### 2.1.2 Files
 
-- Các file phải sử dụng Unix LF (linefeed) để kết thúc dòng.
-- Các file PHP phải kết thúc bằng một dòng trắng.
-- Thẻ đóng `?>` không sử dụng ở file chỉ chứ code PHP
+- Các file PHẢI sử dụng [Unix LF] (linefeed) để kết thúc dòng.
+- Các file `PHP` PHẢI kết thúc bằng một dòng trắng.
+- Thẻ đóng `?>` KHÔNG ĐƯỢC sử dụng ở file chỉ chứa `code PHP`
 
 #### 2.1.3 Lines
 
-- Trên 1 dòng không vượt quá 120 kí tự, tốt nhất nên nhỏ hơn hoặc bằng 80 kí tự.
-- Không nên có kí tự trắng ở cuối dòng code.
-- Có thể sử dụng dòng trắng để chia tách các khối để cho view code dễ dàng hơn.
-- Không được sử dụng nhiều khai báo, toán tử trên cùng một dòng
+- Trên 1 dòng KHÔNG ĐƯỢC vượt quá 120 kí tự, TỐT NHẤT nên nhỏ hơn hoặc bằng 80 kí tự.
+- KHÔNG ĐƯỢC có kí tự trắng ở cuối dòng code.
+- CÓ THỂ sử dụng dòng trắng để chia tách các khối để cho view code dễ dàng hơn.
+- KHÔNG ĐƯỢC sử dụng nhiều khai báo, toán tử trên cùng một dòng
 
 #### 2.1.4 Cách đầu dòng
 
-- Sử dụng 4 khoảng trắng(spaces) để thụt dòng, tuyệt đối không dùng tab (bạn có thể khai báo trong công cụ lập trình để khi ấn tab nó tương đương với việc thụt vào 4 spaces).
+- PHẢI sử dụng 4 khoảng trắng(spaces) để thụt dòng, TUYỆT ĐỐI không dùng tab (bạn có thể khai báo trong công cụ lập trình để khi ấn tab nó tương đương với việc thụt vào 4 spaces).
 
 #### 2.1.5 Keywords and True/False/Null
 
-- Những PHP [keywords] phải viết chữ thường.
-- Những hằng số PHP `true`, `false`, và `null` phải viết thường.
+- Những PHP [keywords] PHẢI viết chữ thường.
+- Những hằng số  PHP `true`, `false`, và `null` PHẢI viết thường.
 
 [keywords]: http://php.net/manual/en/reserved.keywords.php
 
 ### 2.2 Namespace and Use Declarations
 
-- Phải có 1 dòng trắng sau khi khai báo namespace và phải có 1 dòng trắng sau các khai báo use.
-- Tất cả những khai báo `use` phải viết sau khai báo `namespace`
-- Phải sử dụng từ khóa `use` cho mỗi khai báo
-- Phải sủ dụng một dòng trắng sau mỗi khối khai báo `use`
+- PHẢI có 1 dòng trắng sau khi khai báo [namespace] và PHẢI có 1 dòng trắng sau các khai báo `use`.
+- Tất cả những khai báo `use` PHẢI viết sau khai báo `namespace`
+- PHẢI sử dụng từ khóa `use` cho mỗi khai báo
+- PHẢI sủ dụng một dòng trắng sau mỗi khối khai báo `use`
 
 ~~~php
 <?php
@@ -142,8 +157,8 @@ use OtherVendor\OtherPackage\BazClass;
 
 #### 2.3.1 Extends and Implements
 
-- Từ khóa `extends` và `implements` phải được sử dụng trên cùng một dòng với [tên class].
-- Khai báo thẻ mở và thẻ đóng một class phải ở một dòng riêng biệt.
+- Từ khóa `extends` và `implements` PHẢI được sử dụng trên cùng một dòng với [tên class].
+- Khai báo thẻ mở và thẻ đóng một class PHẢI ở một dòng riêng biệt.
 
 ~~~php
 <?php
@@ -159,7 +174,7 @@ class ClassName extends ParentClass implements \ArrayAccess, \Countable
 }
 ~~~
 
-- Danh sách các `implements` phải được tách ra thành nhiều dòng, mỗi một dòng chứa một khai báo riêng biệt.
+- Danh sách các `implements` PHẢI được tách ra thành nhiều dòng, mỗi một dòng chứa một khai báo riêng biệt.
 
 ~~~php
 <?php
@@ -180,9 +195,10 @@ class ClassName extends ParentClass implements
 
 #### 2.3.2 Properties
 
-- Không sử dụng từ khóa `var` khi khai báo [property]
-- Không được khai báo nhiều hơn một [property] cho mỗi khai báo.
-- Tên của [property] không nên dùng gạch dưới để khai báo đặc tính [protected] hay [private]
+- Tất cả các thuộc tính PHẢI được khai báo đặc điểm `Visibility`
+- KHÔNG ĐƯỢC sử dụng từ khóa `var` khi khai báo [property]
+- KHÔNG ĐƯỢC sử dụng nhiều hơn một [property] cho mỗi khai báo.
+- Tên của [property] KHÔNG NÊN dùng gạch dưới để khai báo đặc tính [protected] hay [private]
 
 ~~~php
 <?php
@@ -196,8 +212,9 @@ class ClassName
 
 #### 2.3.3 Methods
 
-- Tên của [Method] không nên dùng gạch dưới để khai báo đặc tính [protected] hay [private]
-- Tên của [Method] không được có ký tự [space] phía sau khai báo. Ký tự mở [{] và đóng [}] phải được viết ở một dòng riêng biệt, và không được có ký tự [space] sau.
+- Tất cả các phương thức PHẢI được khai báo đặc điểm `Visibility`
+- Tên của [Method] KHÔNG NÊN dùng gạch dưới để khai báo đặc tính [protected] hay [private]
+- Tên của [Method] KHÔNG ĐƯỢC có ký tự [space] phía sau khai báo. Ký tự mở [{] và đóng [}] PHẢI được viết ở một dòng riêng biệt, và KHÔNG ĐƯỢC có ký tự [space] sau.
 
 ~~~php
 <?php
@@ -214,8 +231,8 @@ class ClassName
 
 #### 2.3.4 Method Arguments
 
-- Khi dùng nhiều biến cho [method], không được dùng [space] trước mỗi dấu phẩy, và phải có một [space] sau môi dấu phẩy
-- Biến cho [method] có giá trị mặc định thì phải khai báo sau cùng khi khai báo [method]
+- Khi dùng nhiều biến cho [method], KHÔNG ĐƯỢC dùng [space] trước mỗi dấu phẩy, và PHẢI có một [space] sau môi dấu phẩy
+- Biến cho [method] có giá trị mặc định thì PHẢI khai báo sau cùng khi khai báo [method]
 
 ~~~php
 <?php
@@ -230,8 +247,8 @@ class ClassName
 }
 ~~~
 
-- Biến cho [method] có thể khai báo thành nhiều dòng, mỗi dòng chỉ được khai báo một biến.
-- Khi khai báo biến cho [method] trên nhiều dòng, thì ký tự đóng argument [(] và mở method [{] phải được phân tách bằng một [space]
+- Biến cho [method] CÓ THỂ khai báo thành nhiều dòng, mỗi dòng CHỈ ĐƯỢC khai báo một biến.
+- Khi khai báo biến cho [method] trên nhiều dòng, thì ký tự đóng argument [(] và mở method [{] PHẢI được phân tách bằng một [space]
 
 ~~~php
 <?php
@@ -251,8 +268,8 @@ class ClassName
 
 #### 2.3.5 `abstract`, `final`, and `static`
 
-- Khi khai báo các đặc tính `abstract` và `final`  thì phải dùng trước các khai báo `public` và `protected`
-- Khi khai báo `static` thì phải khai báo sau các khai báo `public` và `protected`
+- Khi khai báo các đặc tính `abstract` và `final`  thì PHẢI dùng trước các khai báo `public` và `protected`
+- Khi khai báo `static` thì PHẢI khai báo sau các khai báo `public` và `protected`
 
 ~~~php
 <?php
@@ -273,8 +290,8 @@ abstract class ClassName
 
 #### 2.3.6. Method and Function Calls
 
-- Khi khởi tạo một [method] hay gọi [function], không được có ký tự [space] ở giữa [method] hoặc tên [function] và ký tự mở [(], không được có [space] phía trước ký tự đóng [)]
-- Trong danh sách các biến không được có [space] trước dấu phẩy, và phải có [space] phía sau dấy phẩy
+- Khi khởi tạo một [method] hay gọi [function], KHÔNG ĐƯỢC có ký tự [space] ở giữa [method], tên [function] và ký tự mở [(], KHÔNG ĐƯỢC có [space] phía trước ký tự đóng [)]
+- Trong danh sách các biến KHÔNG ĐƯỢC có [space] trước dấu phẩy, và PHẢI có [space] phía sau dấy phẩy
 
 ~~~php
 <?php
@@ -283,7 +300,7 @@ $foo->bar($arg1);
 Foo::bar($arg2, $arg3);
 ~~~
 
-- Các biến có thể  phân tách thành nhiều dòng, trường hợp này, mỗi biến phải được trình bày ở một dòng riêng biệt.
+- Các biến CÓ THỂ  phân tách thành nhiều dòng, lúc này, mỗi biến PHẢI được trình bày ở một dòng riêng biệt.
 
 ~~~php
 <?php
@@ -296,20 +313,18 @@ $foo->bar(
 
 ### 2.4 Control Structures
 
-- Phải có [space] sau mỗi toán tử chuyển hướng
-- There MUST be one space after the control structure keyword
-- Không được có [space] sau thẻ mở toán tử  chuyển hướng
-- There MUST NOT be a space after the opening parenthesis
-- Không được có [space] phía trước thẻ đóng toán tử  chuyển hướng
-- Phải có một [space] giữa thẻ đóng [)] và thẻ mở [{]
-- There MUST be one space between the closing parenthesis and the opening brace
-- Nội dung của [structure] phải được cách lề  hơn so với tên
-- Ký tự đóng phải được viết ở dòng tiếp theo so với nội dung, nằm ở dòng mới riêng biệt.
-- Nội dung của [structure] phải được bao đóng bởi ký tự ngoặc [{] và [}], điều này giúp cho chuẩn hóa cách tổ  chức code cho [structure] và hạn chế lỗi khi thêm code vào [structure]
+- PHẢI có [space] sau mỗi toán tử chuyển hướng
+- PHẢI có một [space] phía sau từ khóa của khối cấu trúc
+- KHÔNG ĐƯỢC có [space] sau thẻ mở toán tử  chuyển hướng
+- KHÔNG ĐƯỢC có [space] phía sau ky tự mở [{], và phía trước ký tự đóng [}]
+- PHẢI có một [space] giữa thẻ đóng [)] và thẻ mở [{]
+- Nội dung của [structure] PHẢI được cách lề  hơn so với tên
+- Ký tự đóng PHẢI được viết ở dòng tiếp theo so với nội dung, nằm ở dòng mới riêng biệt.
+- Nội dung của [structure] PHẢI được bao đóng bởi ký tự ngoặc [{] và [}], điều này giúp cho chuẩn hóa cách tổ  chức code cho [structure] và hạn chế lỗi khi thêm code vào [structure]
 
 #### 2.4.1. `if`, `elseif`, `else`
 
-- Chú ý toán tử  `else` và `elseif` phải được viết cùng một dòng với ký tự đóng điều kiện trước.
+- Chú ý toán tử  `else` và `elseif` PHẢI được viết cùng một dòng với ký tự đóng điều kiện trước.
 - Chú ý các ký tự dấu ngoặc đơn, dấu cách và dấu ngoặc nhọn ở ví dụ sau
 
 ~~~php
@@ -323,11 +338,11 @@ if ($expr1) {
 }
 ~~~
 
-- Không nên dùng toán tử  `else if` , nên thay bằng toán tử  `elseif`.
+- KHÔNG NÊN dùng toán tử  `else if` , nên thay bằng toán tử  `elseif`.
 
 #### 2.4.2. `switch`, `case`
 
-- Toán tử  `case` phải được sử dụng trong `switch`, và toán tử  `break` phải được đặt ở level trên cùng trong nội dụng của `case`. Bắt buộc phải  comment ở `case` không bình thường, ví dụ `// no break` ở ví dụ sau.
+- Toán tử  `case` PHẢI được sử dụng trong `switch`, và toán tử  `break` phải được đặt ở level trên cùng trong nội dụng của `case`. BẮT BUỘC PHẢI comment ở `case` không bình thường, ví dụ `// no break` ở ví dụ sau.
 - Chú ý các ký tự dấu ngoặc đơn, dấu cách và dấu ngoặc nhọn ở ví dụ sau:
 
 ~~~php
@@ -407,7 +422,7 @@ try {
 }
 ~~~
 
-### 2.5 Closures
+### 2.5. Closures
 
 - Phải có một [space] sau từ khóa `function`, và một [space] phía trước và phía sau từ khóa `use`
 - Ký tự mở [{] phải được viết trên cùng dòng, và ký tự đóng phải được viết ở dòng mới.
@@ -491,7 +506,7 @@ $foo->bar(
 );
 ~~~
 
-### 2.6 Ví dụ Coding Style
+### 2.6. Ví dụ Coding Style
 
 ~~~php
 <?php
@@ -521,7 +536,7 @@ class Foo extends Bar implements FooInterface
 }
 ~~~
 
-## 3. Logger Interface
+## 3. PSR-3: Logger Interface
 
 ===================================================================================================================
 
@@ -759,6 +774,7 @@ class LogLevel
     const INFO      = 'info';
     const DEBUG     = 'debug';
 }
+~~~
 
 ## 4. PSR-4 Autoloader
 
@@ -767,61 +783,38 @@ class LogLevel
 ```link
 https://www.php-fig.org/psr/psr-4/
 ```
-~~~
 
-## 1. Overview
+### 4.1. Tổng quan
 
-This PSR describes a specification for [autoloading][] classes from file paths. It is fully interoperable, and can be used in addition to any other autoloading specification, including [PSR-0][]. This PSR also describes  where to place files that will be autoloaded according to the specification.
+PSR đưa ra các quy ước cho [autoloading][] classes trong files. Nó bao gồm cả những quy tắc [PSR-0], và gồm những quy tắc đặt files.
 
-## 2. Specification
+### 4.2. Mô tả
 
+#### 4.2.1. Khái niệm "class" để chỉ  các lớp, interfaces, traits, và cả các cấu trúc tương tự khác.
 
-Tên đầy đủ nó PHẢI có một 'tên lớp kết thúc' (terminating class name)
-
-Tên xác định đầy đủ PHẢI có một namespace gốc.
-
-Tên xác định đầy đủ CÓ THỂ có một hoặc nhiều namespace con.
-
-
-1. The term "class" refers to classes, interfaces, traits, and other similar structures.
-
-2. Khai báo đầy đủ một `class` có dạng sau 
+#### 4.2.2. Khai báo đầy đủ một `class` có dạng sau
 
 ~~~php
 \<NamespaceName>(\<SubNamespaceNames>)*\<ClassName>
 ~~~
 
-    1. The fully qualified class name MUST have a top-level namespace name, also known as a "vendor namespace".
-    1. Khai báo phải có [namespace] của mức cá nhất, có thể hiểu là [vendor namespace]
+- Khai báo đây đủ PHẢI có [namespace] của mức cá nhất, có thể hiểu là [vendor namespace]
+- Tên xác định đầy đủ PHẢI có một namespace gốc.
+- Khai báo đầy đủ thể CÓ THỂ có một hoặc nhiều [namespace] con
+- Khai báo đầy đủ PHẢI CÓ một 'tên lớp kết thúc' (terminating class name)
+- Tất cả các lớp PHẢI được tham chiếu có phân biệt chữ hoa và chữ thường
 
-    2. The fully qualified class name MAY have one or more sub-namespace names.
-    2. Khai báo đầy thể có thể có một hoặc nhiều [namespace] con
+#### 4.2.3. Khi `load` một file, phải tương ứng với một 'fully qualified class name'.
 
-    3. The fully qualified class name MUST have a terminating class name.
+#### 4.2.3. Điều kiện khi `loading` class đầy đủ
 
-    4. Underscores have no special meaning in any portion of the fully qualified class name.
+    - Một chuỗi liên tục, có thể có một hoặc nhiều [namespace], không có dấu phân tách [namespace], trong [namespace prefix] phải có ít nhất một "base directory".
+    - Các [namespace] con, ở phái sau "namespace prefix" phải tương ứng với một thư mục nằm trong "base directory". Tên thư mục con PHẢI trùng với [namespace] con.
+    - Tên của [terminating class] PHẢI tương ứng với trên file `.php`
 
-    5. Alphabetic characters in the fully qualified class name MAY be any combination of lower case and upper case.
+#### 4.2.4. Sử dụng [Autoloader] không được trả về lỗi, không được đưa ra bất kỳ lỗi nào, không trả về giá trị
 
-    6. All class names MUST be referenced in a case-sensitive fashion.
-
-3. When loading a file that corresponds to a fully qualified class name ...
-3. Khi lấy file 
-
-    1. A contiguous series of one or more leading namespace and sub-namespace names, not including the leading namespace separator, in the fully qualified class name (a "namespace prefix") corresponds to at least one
-       "base directory".
-    1. Một chuỗi liên tục bao gồm [namespace], và [sub-namespace], không được có dấu phân tách [namespace], 
-
-    2. The contiguous sub-namespace names after the "namespace prefix" correspond to a subdirectory within a "base directory", in which the namespace separators represent directory separators. The subdirectory name MUST match the case of the sub-namespace names.
-
-    3. The terminating class name corresponds to a file name ending in `.php`. The file name MUST match the case of the terminating class name.
-
-4. Sử dụng [Autoloader] không được trả về lỗi, không được đưa ra bất kỳ lỗi nào, không trả về giá trị
-
-## 3. Examples
-
-The table below shows the corresponding file path for a given fully qualified
-class name, namespace prefix, and base directory.
+### 4.3. Ví dụ
 
 | Fully Qualified Class Name    | Namespace Prefix   | Base Directory           | Resulting File Path
 | ----------------------------- |--------------------|--------------------------|-------------------------------------------
@@ -830,19 +823,29 @@ class name, namespace prefix, and base directory.
 | \Symfony\Core\Request         | Symfony\Core       | ./vendor/Symfony/Core/   | ./vendor/Symfony/Core/Request.php
 | \Zend\Acl                     | Zend               | /usr/includes/Zend/      | /usr/includes/Zend/Acl.php
 
-For example implementations of autoloaders conforming to the specification,
-please see the [examples file][]. Example implementations MUST NOT be regarded
-as part of the specification and MAY change at any time.
-
 [autoloading]: http://php.net/autoload
 [PSR-0]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md
 [examples file]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader-examples.md
 
+## 5. Quy ước khác
+
+- Tối đa mỗi hàm, [method] KHÔNG NÊN quá 15 dòng.
+- Tách các nghiệp vụ thành các hàm riêng biệt
+- Tương tự với các object, khi đủ lớn, nên tác thành các [method]
+- Số lượng rẽ nhánh trong các `switch`, `if`, `else` KHÔNG NÊN quá 4
+- Hạn chế tối đa sử dụng các điều kiện rẽ nhánh
+- Tham số của [class] NÊN là 4
+- NÊN xóa những đoạn [code chết]
+- PHẢI comment mô tả cho class, method, function.
+- PHẢI đặt tên biến, tham số, hàm, class liên quan đến mục đích sử dụng
+- KHÔNG NÊN đặt trên biến, tham số, hàm, class quá dài
+- Tên method, phải được bắt đầu bằng một động từ 'GET', 'POST, 'UPDATE', 'PUT' ...
 
 
-## 4. PSR-0 Autoloader
+## 6. Tài liệu
 
 ===================================================================================================================
+
 ```
 https://viblo.asia/p/coding-convention-doi-voi-mot-project-php-ORNZqNPrl0n
 https://viblo.asia/p/coding-convention-psr-va-coding-standard-in-framgia-djeZ1amQZWz
