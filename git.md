@@ -1,9 +1,17 @@
 
-#Config
-###Get
+# Config
+
+## Get
+
 ```bash
 git config --get remote.origin.url
 ```
+## Set 
+
+```bash
+git remote set-url origin https://github.com/USERNAME/REPOSITORY.git
+```
+
 ###Caching your GitHub password in Git
 ```git
 git config --global credential.helper cache
