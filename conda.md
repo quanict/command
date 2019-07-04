@@ -23,7 +23,6 @@ Output
     bash Anaconda3-2019.03-Linux-x86_64.sh
 
 
-
 ## 1.Check conda is installed and in your PATH
 
 ```command
@@ -58,7 +57,8 @@ source deactivate
 ## 6.Delete a no longer needed virtual environment
 
 ```command
-conda remove -n yourenvname -all
+conda remove --name myenv --all
+
 ```
 
 ## List all environment
