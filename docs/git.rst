@@ -56,20 +56,20 @@ Remove branch
 Delete a remote GIT branch
 ..........................
 .. code :: bash
-    
+
     git push <remote_name> --delete <branch_name>
 
 Reset
 -----
 
 Delete the most recent commit
-............................
+.............................
 .. code :: bash
-    
+
     git reset --hard HEAD~1
 
 Delete the most recent commit, without destroying the work you've done
-.................................
+......................................................................
 .. code :: bash
-    
+
     git reset --soft HEAD~1
