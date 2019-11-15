@@ -73,3 +73,12 @@ Delete the most recent commit, without destroying the work you've done
 .. code :: bash
 
     git reset --soft HEAD~1
+
+
+How to shrink the git folder
+----------------------------
+
+.. code :: bash
+
+    git gc --aggressive --prune
+    git repack -a -d --depth=250 --window=250
